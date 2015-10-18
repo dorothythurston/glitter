@@ -31,3 +31,6 @@ en:
   users:
     new:
       submit: Sign in
+  dashboards:
+    show:
+      welcome_message: Welcome
