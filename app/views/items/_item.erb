@@ -1,0 +1,10 @@
+<ul>
+  <li class="item">
+    <%= item.created_at.strftime("%b %d %Y") %>
+  — <%= link_to item.user.email, item.user %>
+
+    <div class="item-text">
+      <%= link_to item.text, item %>
+    </div>
+  </li>
+</ul>
