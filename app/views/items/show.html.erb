@@ -1,3 +1,7 @@
 <div id="show-item">
   <p><%= @item.text%> </p>
+
+  <% if current_user && current_user == @item.user %>
+    <%= button_to "Delete", @item, method: :delete %>
+  <% end %>
 </div>

@@ -16,3 +16,5 @@ en:
   items:
     new:
       submit: Post
+    show:
+      destroy: Delete

@@ -4,6 +4,10 @@ module Features
       fill_in 'item_text', with: item_text
       click_button I18n.t('items.new.submit')
     end
+
+    def example_text
+      "here is some text"
+    end
   end
 end
 
