@@ -1,0 +1,9 @@
+<div id="new-item">
+  <% if current_user %>
+    <%= form_for(@item)  do |f| %>
+      <% f.label :text %>
+      <%= f.text_field :text %>
+      <%= f.submit t('items.new.submit') %>
+    <% end %>
+  <% end %>
+</div>
