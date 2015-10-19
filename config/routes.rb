@@ -16,4 +16,10 @@ Rails.application.routes.draw do
       post "glitter" => "item_glitterings#create"
     end
   end
+
+  scope module: :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      resources :items, only: [:index]
+    end
+  end
 end

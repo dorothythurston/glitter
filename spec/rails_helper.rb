@@ -15,6 +15,8 @@ Monban.test_mode!
 
 RSpec.configure do |config|
   config.include Monban::Test::Helpers, type: :feature
+  config.include Monban::Test::Helpers, type: :request
+  config.include Requests::JsonHelpers, type: :request
   config.after :each do
     Monban.test_reset!
   end
