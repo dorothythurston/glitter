@@ -1,0 +1,90 @@
+#outer-wrapper {
+  @include outer-container;
+
+  #welcome-message {
+    text-align: center;
+  }
+
+ #logo {
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    @include linear-gradient($hot-pink, $light-pink);
+    @include linear-gradient(to top, $light-pink, $hot-pink);
+    @include linear-gradient(50deg, $hot-pink 0%, $magenta 50%, $flamingo-pink 51%, $bubblegum-pink 100%);
+    text-align: center;
+  }
+
+  #logo a {
+    color: white;
+    font-size: 3em;
+  }
+
+  #flash {
+    background-color: coral;
+  }
+
+  #new-item {
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    background-color: $light-blue;
+    padding: 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+  }
+
+  #show-item {
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    background-color: $light-blue;
+    max-width: 400px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #user-info {
+    text-align: center;
+    border-style: solid;
+    border-width: 5px;
+    border-color: $light-pink;
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    padding: 15px;
+
+    #name {
+      font-size: 2em;
+    }
+
+    #followers {
+      @include border-top-radius($base-border-radius);
+      @include border-right-radius($base-border-radius);
+      @include border-bottom-radius($base-border-radius);
+      @include border-left-radius($base-border-radius);
+      background-color: $flamingo-pink;
+      max-width: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  #main-content {
+    padding: 15px;
+  }
+}

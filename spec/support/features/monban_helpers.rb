@@ -16,15 +16,15 @@ module Features
 
     def user_should_be_signed_in
       visit root_path
-      expect(page).to have_content I18n.t('layouts.application.sign_out')
+      expect(page).to have_content I18n.t('application.header.sign_out')
     end
 
     def user_click_sign_out
-      click_link I18n.t('layouts.application.sign_out')
+      click_link I18n.t('application.header.sign_out')
     end
 
     def user_should_be_signed_out
-      expect(page).to have_content I18n.t('layouts.application.sign_in')
+      expect(page).to have_content I18n.t('application.header.sign_in')
     end
   end
 end

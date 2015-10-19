@@ -1,9 +1,10 @@
 en:
-  layouts:
-    application:
-      sign_in: Sign in
-      sign_out: Sign out
-      sign_up: Sign up
+  application:
+      header:
+        logo: Glitter
+        sign_in: Sign in
+        sign_out: Sign out
+        sign_up: Sign up
   sessions:
     new:
       submit: Sign in

@@ -1,0 +1,45 @@
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &%default-ul {
+    list-style-type: disc;
+    margin-bottom: $small-spacing;
+    padding-left: $base-spacing;
+  }
+
+  &%default-ol {
+    list-style-type: decimal;
+    margin-bottom: $small-spacing;
+    padding-left: $base-spacing;
+  }
+}
+
+dl {
+  margin-bottom: $small-spacing;
+
+  dt {
+    font-weight: bold;
+    margin-top: $small-spacing;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+li {
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    background-color: $light-blue;
+    padding: 15px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

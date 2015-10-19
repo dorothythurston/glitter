@@ -7,14 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if signed_in? %>
-  <%= link_to t('.sign_out'), session_path, method: :delete %>
-<% else %>
-  <%= link_to t('.sign_in'), new_session_path %>
-  <%= link_to t('.sign_up'), new_user_path %>
-<% end %>
+  <div id="outer-wrapper">
+    <%= render "header" %>
 
-<%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>
