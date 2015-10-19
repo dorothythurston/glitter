@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe "Items API" do
-  it 'sends a list of items' do
-    user = create(:user, :id => 1)
+describe "GET /v1/items" do
+  it 'returns a list of items' do
+    user = create(:user, id: 1)
 
     3.times do
       create(:item)
