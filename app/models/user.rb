@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
     dependent: :destroy
 
   has_many :followers, through: :follower_relationships
+  has_many :glitterings, dependent: :destroy
+  has_many :glittered_items, through: :glitterings, source: :glitterable, source_type: 'Item'
 
   def follow(user)
     follow = followed_user_relationships.create(followed_user: user)
@@ -27,5 +29,13 @@ class User < ActiveRecord::Base
 
   def unfollow(user)
     followed_users.destroy user
+  end
+
+  def glitter(target)
+    glittering = glitterings.create(glitterable: target)
+  end
+
+  def glittered?(target)
+    glitterings.exists?(glitterable: target)
   end
 end
