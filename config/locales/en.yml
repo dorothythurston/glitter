@@ -14,9 +14,11 @@ en:
     show:
       follow: Follow
       unfollow: Unfollow
+      recent_items: Recent Items
   dashboards:
     show:
       welcome_message: Welcome
+      news_feed_header: New items
   items:
     new:
       submit: Post

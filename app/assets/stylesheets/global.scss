@@ -1,8 +1,42 @@
 #outer-wrapper {
+  @include border-top-radius($base-border-radius);
+  @include border-right-radius($base-border-radius);
+  @include border-bottom-radius($base-border-radius);
+  @include border-left-radius($base-border-radius);
   @include outer-container;
+  background-color: $barely-pink;
+  padding: 15px;
+
+  #main-content {
+    @include span-columns(9);
+    background-color: $light-pink;
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    padding: 15px;
+
+    h2 {
+      font-size: 2em;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  #side-nav {
+    @include span-columns(3);
+    background-color: $super-light-pink;
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    padding: 15px;
+  }
 
   #welcome-message {
     text-align: center;
+    font-size: 2em;
+    color: $hot-pink;
   }
 
  #logo {
@@ -32,9 +66,6 @@
     @include border-left-radius($base-border-radius);
     background-color: $light-blue;
     padding: 10px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: 10px;
   }
 
@@ -43,7 +74,7 @@
     @include border-right-radius($base-border-radius);
     @include border-bottom-radius($base-border-radius);
     @include border-left-radius($base-border-radius);
-    background-color: $light-blue;
+    background-color: $light-pink;
     max-width: 400px;
     padding: 15px;
     margin-left: auto;
@@ -54,20 +85,8 @@
 
   #user-info {
     text-align: center;
-    border-style: solid;
-    border-width: 5px;
-    border-color: $light-pink;
-    @include border-top-radius($base-border-radius);
-    @include border-right-radius($base-border-radius);
-    @include border-bottom-radius($base-border-radius);
-    @include border-left-radius($base-border-radius);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    max-width: 300px;
-    padding: 15px;
-
     #name {
       font-size: 2em;
     }
@@ -85,6 +104,16 @@
   }
 
   #main-content {
+    padding: 15px;
+  }
+
+  #news-feed {
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    margin-left: auto;
+    margin-right: auto;
     padding: 15px;
   }
 }

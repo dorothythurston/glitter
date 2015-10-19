@@ -1,18 +1,26 @@
-<div id = "user-info">
-  <div id = "name">
-    <h1><%= @user.email %></h1>
-  </div>
-  <div id = "followers">
-    <%= pluralize(@user.followers.count, "follower") %></p>
-  </div>
- </div>
+<div id="main-content">
+  <h2><%= t('.recent_items') %></h2>
+  <%= render @items %>
+</div>
 
-<% if current_user && current_user != @user %>
-  <% if current_user.following? @user %>
-    <%= button_to t('.unfollow'), unfollow_user_path(@user), method: :delete %>
-  <% else %>
-    <%= button_to t('.follow'), follow_user_path(@user) %>
+<div id="side-nav">
+  <div id = "user-info">
+    <div id = "name">
+      <h1><%= @user.email %></h1>
+    </div>
+    <div id = "followers">
+      <%= pluralize(@user.followers.count, "follower") %></p>
+    </div>
+  </div>
+
+
+  <% if current_user && current_user != @user %>
+    <% if current_user.following? @user %>
+      <%= button_to t('.unfollow'), unfollow_user_path(@user), method: :delete %>
+    <% else %>
+      <%= button_to t('.follow'), follow_user_path(@user) %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<%= render @items %>
+
