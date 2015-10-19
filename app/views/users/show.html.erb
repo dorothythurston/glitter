@@ -1,2 +1,11 @@
 <h1><%= @user.email %></h1>
+
+<% if current_user && current_user != @user %>
+  <% if current_user.following? @user %>
+    <%= button_to t('.unfollow'), unfollow_user_path(@user), method: :delete %>
+  <% else %>
+    <%= button_to t('.follow'), follow_user_path(@user) %>
+  <% end %>
+<% end %>
+
 <%= render @items %>

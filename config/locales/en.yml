@@ -18,3 +18,7 @@ en:
       submit: Post
     show:
       destroy: Delete
+  users:
+    show:
+      follow: Follow
+      unfollow: Unfollow
