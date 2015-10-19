@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
     @item = Item.new
-    @items = Item.all
+    @items = Item.recent.paginated(params[:page], 3)
   end
 end

@@ -1,6 +1,7 @@
 <div id="main-content">
   <h2><%= t('.recent_items') %></h2>
   <%= render @items %>
+  <%= paginate @items %>
 </div>
 
 <div id="side-nav">

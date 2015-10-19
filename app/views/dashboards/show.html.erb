@@ -4,6 +4,7 @@
   <div id="news-feed">
     <h2 id="news-feed-header-text"><%= t('.news_feed_header') %></h2>
     <%= render @items %>
+    <%= paginate @items %>
   </div>
 </div>
 

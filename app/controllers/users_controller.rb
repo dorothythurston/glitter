@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @items = @user.items
+    @items = @user.items.recent.paginated(params[:page], 3)
   end
 
   private

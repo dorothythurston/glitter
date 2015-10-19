@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'monban'
 gem 'monban-generators'
 gem 'neat'
+gem 'kaminari'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
