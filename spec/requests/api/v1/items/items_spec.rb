@@ -8,10 +8,25 @@ describe "GET /v1/items" do
       create(:item)
     end
 
-    get '/v1/items'
+    json_get '/v1/items',
+      api_token: user.api_token
 
     expect(response.status).to eq 200
 
-    expect(json.length).to eq(3)
+    expect(json_response.length).to eq(3)
+  end
+end
+
+describe "POST /v1/items" do
+  it "creates an item" do
+     user = create(:user, id: 1)
+
+    json_post "/v1/items", item: {
+      text: "example_text"
+    }, api_token: user.api_token
+
+
+    expect(response.status).to eq 200
+    expect(Item.last.text).to eq ("example_text")
   end
 end
