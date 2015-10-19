@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  before_validation :set_api_token, on: :create
+
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
@@ -37,5 +39,13 @@ class User < ActiveRecord::Base
 
   def glittered?(target)
     glitterings.exists?(glitterable: target)
+  end
+
+  private
+
+  def set_api_token
+    begin
+      self.api_token = SecureRandom.hex
+    end while User.exists?(api_token: api_token)
   end
 end
