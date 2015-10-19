@@ -7,10 +7,12 @@ en:
         sign_up: Sign up
   sessions:
     new:
+      header_text: Login
       submit: Sign in
   users:
     new:
       submit: Sign in
+      header_text: Sign up
     show:
       follow: Follow
       unfollow: Unfollow
@@ -19,6 +21,7 @@ en:
     show:
       welcome_message: Welcome
       news_feed_header: New items
+      login: Login to post
   items:
     new:
       submit: Post

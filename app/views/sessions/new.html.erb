@@ -1,13 +1,16 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.submit t('.submit') %>
-  </div>
-<% end %>
+<div id="log-in-container">
+  <h2 id="content-header"><%= t('.header_text') %></h2>
+  <%= form_for :session, url: session_path do |form| %>
+    <div>
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+    <div>
+      <%= form.submit t('.submit') %>
+    </div>
+  <% end %>
+</div>

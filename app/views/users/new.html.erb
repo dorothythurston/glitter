@@ -1,23 +1,26 @@
-<%= form_for @user do |form| %>
+<div id="log-in-container">
+  <h2 id="content-header"><%= t('.header_text') %></h2>
+  <%= form_for @user do |form| %>
 
-  <% if @user.errors.any? %>
-    <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
-    <ul>
-      <% @user.errors.full_messages.each do |error_message| %>
-        <li><%= error_message %></li>
-      <% end %>
-    </ul>
+    <% if @user.errors.any? %>
+      <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
+      <ul>
+        <% @user.errors.full_messages.each do |error_message| %>
+          <li><%= error_message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div>
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+    <div>
+      <%= form.submit t('.submit') %>
+    </div>
   <% end %>
-
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.submit t('.submit') %>
-  </div>
-<% end %>
+</div>
