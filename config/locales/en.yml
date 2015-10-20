@@ -1,4 +1,5 @@
 en:
+  invalid_login: "Username and password do not match."
   application:
       header:
         logo: Glitter
