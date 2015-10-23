@@ -19,7 +19,11 @@ Rails.application.routes.draw do
 
   scope module: :api, defaults: { format: 'json' } do
     namespace :v1 do
-      resources :items, only: [:index, :create]
+      resources :items, only: [:index, :create] do
+        member do
+          post "glitter" => "item_glitterings#create"
+        end
+      end
       resource :session
     end
   end
