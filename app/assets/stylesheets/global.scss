@@ -69,12 +69,25 @@
     border-radius: 10px;
   }
 
+  #show-item-container {
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    padding: 15px;
+    background-color: $bubblegum-pink;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
   #show-item {
     @include border-top-radius($base-border-radius);
     @include border-right-radius($base-border-radius);
     @include border-bottom-radius($base-border-radius);
     @include border-left-radius($base-border-radius);
-    background-color: $light-pink;
+    background-color: $light-blue;
     max-width: 400px;
     padding: 15px;
     margin-left: auto;

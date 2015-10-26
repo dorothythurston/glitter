@@ -1,14 +1,18 @@
-<div id="show-item">
-  <p><%= @item.text%> </p>
-  <div id ="glitterings">
-    <p> glitter: <%= @item.glitterings.count %></p>
-  </div>
+<div id="show-item-container">
+  <div id="show-item">
+    <p><%= @item.text%> </p>
+    <div id ="glitterings">
+      <p> glitter: <%= @item.glitterings.count %></p>
+    </div>
 
-  <% if current_user && current_user == @item.user %>
-    <%= button_to t('.destroy'), @item, method: :delete %>
-  <% else %>
-    <% unless current_user.glittered? @item%>
-      <%= button_to t('.glitter'), glitter_item_path(@item) %>
-    <%end%>
-  <% end %>
+    <% if current_user %>
+      <% if current_user == @item.user %>
+        <%= button_to t('.destroy'), @item, method: :delete %>
+      <% else %>
+        <% unless current_user.glittered? @item%>
+          <%= button_to t('.glitter'), glitter_item_path(@item) %>
+        <%end%>
+    <% end %>
+    <% end %>
+  </div>
 </div>
