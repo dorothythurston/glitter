@@ -19,6 +19,11 @@ module Requests
       post(path, params, headers_with_auth)
     end
 
+    def json_delete(*args)
+      path, params, headers_with_auth = process_arguments(*args)
+      delete(path, params, headers_with_auth)
+    end
+
     def json_headers(headers = {})
       JSON_HEADERS.reverse_merge(headers)
     end

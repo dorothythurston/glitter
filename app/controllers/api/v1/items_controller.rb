@@ -8,6 +8,12 @@ class Api::V1::ItemsController < Api::V1::BaseController
     render json: { success: true }
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    render json: { success: true }
+  end
+
   private
 
   def item_params

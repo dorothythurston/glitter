@@ -30,3 +30,17 @@ describe "POST /v1/items" do
     expect(Item.last.text).to eq ("example_text")
   end
 end
+
+describe "DELETE /v1/items" do
+  it "deletes an item" do
+    user = create(:user, id: 1)
+    item = create(:item, user_id: 1, id: 1)
+
+    json_delete "/v1/items/1", item: {
+      id: 1
+    }, api_token: user.api_token
+
+    expect(response.status).to eq 200
+    expect(Item.last).to eq(nil)
+  end
+end
