@@ -8,8 +8,14 @@ describe "POST /v1/users" do
       password: "test",
     }
 
+    user = User.last
+    expect(user.email).to eq("test@test.com")
 
-    expect(response.status).to eq 200
-    expect(User.last.email).to eq ("test@test.com")
+    expect(json_response).to eq({ current_user: {
+      id: user.id,
+      email: user.email,
+      api_token: user.api_token,
+      device_token: user.device_token,
+    }}.as_json)
   end
 end
