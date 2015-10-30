@@ -1,6 +1,6 @@
 class Api::V1::ItemsController < Api::V1::BaseController
   def index
-    @items = Item.all
+    @items = Item.all.order(created_at: :desc)
   end
 
   def create
