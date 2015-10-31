@@ -26,6 +26,7 @@ en:
   items:
     new:
       submit: Post
+      placeholder-text: "What's happening?"
     show:
       destroy: Delete
       glitter: Glitter

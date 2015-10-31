@@ -2,7 +2,7 @@
   <% if current_user %>
     <%= form_for(@item)  do |f| %>
       <% f.label :text %>
-      <%= f.text_field :text %>
+      <%= f.text_field :text, placeholder: I18n.t('items.new.placeholder-text') %>
       <%= f.submit t('items.new.submit') %>
     <% end %>
   <% end %>
