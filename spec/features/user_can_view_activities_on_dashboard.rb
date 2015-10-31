@@ -26,4 +26,21 @@ describe "User can view activity on dashboard" do
     visit root_path(as: follower)
     expect(page).to have_content("#{user.email} #{I18n.t('following_relationship_activities.following_relationship_activity.followed')} #{follower.email}")
   end
+
+  scenario "followed user successfully glitters item" do
+    user_that_creates_item = create(:user)
+    user_that_glitters_item = create(:user)
+    user_that_creates_item.follow(user_that_glitters_item)
+    user_that_glitters_item.follow(user_that_creates_item)
+    item = create(:item, user_id: user_that_creates_item.id, text: example_text)
+
+    visit root_path(as: user_that_glitters_item)
+    visit user_path(user_that_creates_item)
+    click_on example_text
+    click_button I18n.t('items.show.glitter')
+    sign_out
+
+    visit root_path(as: user_that_creates_item)
+    expect(page).to have_content("#{user_that_glitters_item.email} #{I18n.t('glittering_activities.glittering_activity.glittered')} #{I18n.t('glittering_activities.glittering_activity.post')}")
+  end
 end

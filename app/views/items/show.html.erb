@@ -1,5 +1,6 @@
 <div id="show-item-container">
   <div id="show-item">
+    <h2><%= @item.user.email %></h2>
     <p><%= @item.text%> </p>
     <div id ="glitterings">
       <p> glitter: <%= @item.glitterings.count %></p>
@@ -12,7 +13,7 @@
         <% unless current_user.glittered? @item%>
           <%= button_to t('.glitter'), glitter_item_path(@item) %>
         <%end%>
-    <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>

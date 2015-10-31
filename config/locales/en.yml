@@ -35,6 +35,11 @@ en:
   item_activities:
     item_activity:
       made_new: made a new
+      post: post
   following_relationship_activities:
     following_relationship_activity:
       followed: followed
+  glittering_activities:
+    glittering_activity:
+      post: post
+      glittered: glittered a
