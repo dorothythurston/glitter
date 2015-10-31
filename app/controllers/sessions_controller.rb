@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     if sign_in(user)
       redirect_to root_path
     else
+      flash.now.notice = t('flashes.failure_after_create')
       render :new
     end
   end

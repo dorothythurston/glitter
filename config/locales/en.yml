@@ -48,3 +48,5 @@ en:
     glittering_activity:
       post: post
       glittered: glittered a
+  flashes:
+    failure_after_create: Bad email or password.
