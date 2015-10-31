@@ -21,7 +21,7 @@ en:
   dashboards:
     show:
       welcome_message: Welcome
-      news_feed_header: New items
+      news_feed_header: New
       login: Login to post
   items:
     new:

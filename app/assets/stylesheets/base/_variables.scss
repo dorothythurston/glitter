@@ -16,22 +16,24 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$magenta: #FF69B4;
-$flamingo-pink: #FF83C1;
-$light-pink: #ffb6da;
-$bubblegum-pink: #FFB6DA;
-$hot-pink: #ff1d8e;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 $light-blue: #F5FAFF;
-$super-light-pink: #ffe9fc;
-$barely-pink: #fff6fe;
+
+$slight-purple: #f0e6f9;
+$barely-purple: #e1cef4;
+$super-light-purple: #d2b6ee;
+$light-purple: #c39ee9;
+$grey-purple: #b486e4;
+$plum-purple: #873dd3;
+$deep-purple: #7825ce;
+$bright-purple: #690dc9;
 
 // Font Colors
 $base-background-color: #fff;
-$base-font-color: $dark-gray;
-$action-color: $magenta;
+$base-font-color: $grey-purple;
+$action-color: $deep-purple;
 
 // Border
 $base-border-color: $light-gray;

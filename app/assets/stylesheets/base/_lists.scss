@@ -35,7 +35,7 @@ li {
     @include border-right-radius($base-border-radius);
     @include border-bottom-radius($base-border-radius);
     @include border-left-radius($base-border-radius);
-    background-color: $light-blue;
+    background-color: $slight-purple;
     padding: 15px;
     max-width: 400px;
     margin-left: auto;

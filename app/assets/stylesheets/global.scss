@@ -4,12 +4,12 @@
   @include border-bottom-radius($base-border-radius);
   @include border-left-radius($base-border-radius);
   @include outer-container;
-  background-color: $barely-pink;
+  background-color: $barely-purple;
   padding: 15px;
 
   #main-content {
     @include span-columns(9);
-    background-color: $light-pink;
+    background-color: $light-purple;
     @include border-top-radius($base-border-radius);
     @include border-right-radius($base-border-radius);
     @include border-bottom-radius($base-border-radius);
@@ -25,18 +25,20 @@
 
   #side-nav {
     @include span-columns(3);
-    background-color: $super-light-pink;
+    background-color: $light-purple;
     @include border-top-radius($base-border-radius);
     @include border-right-radius($base-border-radius);
     @include border-bottom-radius($base-border-radius);
     @include border-left-radius($base-border-radius);
     padding: 15px;
+    color: white;
+    text-align: center;
   }
 
   #content-header {
     text-align: center;
     font-size: 2em;
-    color: $hot-pink;
+    color: white;
   }
 
  #logo {
@@ -44,9 +46,8 @@
     @include border-right-radius($base-border-radius);
     @include border-bottom-radius($base-border-radius);
     @include border-left-radius($base-border-radius);
-    @include linear-gradient($hot-pink, $light-pink);
-    @include linear-gradient(to top, $light-pink, $hot-pink);
-    @include linear-gradient(50deg, $hot-pink 0%, $magenta 50%, $flamingo-pink 51%, $bubblegum-pink 100%);
+    @include linear-gradient($bright-purple, $light-purple);
+    @include linear-gradient(50deg, $bright-purple 0%, $plum-purple 50%, $deep-purple 51%, $bright-purple 100%);
     text-align: center;
   }
 
@@ -64,7 +65,7 @@
     @include border-right-radius($base-border-radius);
     @include border-bottom-radius($base-border-radius);
     @include border-left-radius($base-border-radius);
-    background-color: $light-blue;
+    background-color: $slight-purple;
     padding: 10px;
     border-radius: 10px;
   }
@@ -75,7 +76,7 @@
     @include border-bottom-radius($base-border-radius);
     @include border-left-radius($base-border-radius);
     padding: 15px;
-    background-color: $bubblegum-pink;
+    background-color: $light-purple;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -87,7 +88,7 @@
     @include border-right-radius($base-border-radius);
     @include border-bottom-radius($base-border-radius);
     @include border-left-radius($base-border-radius);
-    background-color: $light-blue;
+    background-color: $slight-purple;
     max-width: 400px;
     padding: 15px;
     margin-left: auto;
@@ -109,10 +110,11 @@
       @include border-right-radius($base-border-radius);
       @include border-bottom-radius($base-border-radius);
       @include border-left-radius($base-border-radius);
-      background-color: $flamingo-pink;
+      background-color: $grey-purple;
       max-width: 100px;
       margin-left: auto;
       margin-right: auto;
+      color: white;
     }
   }
 
