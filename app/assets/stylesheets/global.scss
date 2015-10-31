@@ -138,4 +138,22 @@
     margin-right: auto;
     padding: 15px;
   }
+
+  #opening-message {
+    @include border-top-radius($base-border-radius);
+    @include border-right-radius($base-border-radius);
+    @include border-bottom-radius($base-border-radius);
+    @include border-left-radius($base-border-radius);
+    background-color: $light-purple;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 15px;
+    color: white;
+  }
+
+  #example-item {
+    text-align: left;
+    color: $grey-purple;
+  }
 }

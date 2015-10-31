@@ -1,1 +1,13 @@
 <h2 id="content-header"><%= t('.welcome_message')%></h2>
+
+<div id="opening-message">
+  <%= t('.welcome_text') %>
+  <div id="show-item">
+    <div id ="example-item">
+      <h2><%= link_to t('.example_email'), new_session_path %></h2>
+      <p><%= t('.example_text') %></p>
+      <div id ="glitterings">
+        <p><%= t('.example_glitter') %></p>
+    </div>
+  </div>
+</div>

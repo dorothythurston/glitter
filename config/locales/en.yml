@@ -32,6 +32,10 @@ en:
   homes:
     show:
       welcome_message: Welcome
+      welcome_text: Glitter is an online social networking platform that allows people to share and support each other.
+      example_email: josh.smith@gmail.com
+      example_text: "glitter is the best app ever!! 😀💕😊💎"
+      example_glitter: "glitter: 5"
   item_activities:
     item_activity:
       made_new: made a new
