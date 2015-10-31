@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
   def create
     item = current_user.items.create(item_params)
+    if item.save
+      current_user.followers.each do |follower|
+        notify(item, item, 'CreateItemActivity')
+      end
+    end
     redirect_to item
   end
 

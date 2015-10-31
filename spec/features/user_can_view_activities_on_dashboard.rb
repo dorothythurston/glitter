@@ -7,6 +7,6 @@ describe "User can view items on dashboard" do
     create_item(example_text)
 
     visit root_path
-    expect(page).to display_item(example_text)
+    expect(page).to display_item("#{user.email} created a new post")
   end
 end

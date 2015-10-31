@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :follower_relationships
   has_many :glitterings, dependent: :destroy
   has_many :glittered_items, through: :glitterings, source: :glitterable, source_type: 'Item'
+  has_many :activities
 
   def follow(user)
     follow = followed_user_relationships.create(followed_user: user)

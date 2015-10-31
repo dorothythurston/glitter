@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
-  root to: "dashboards#show"
+  root to: "homes#show"
 
   get '/sign_in' => 'sessions#new', as: 'sign_in'
+
+  resource :dashboard, only: [:show]
 
   resources :users, only: [:new, :create, :show] do
     member do
