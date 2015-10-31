@@ -1,4 +1,4 @@
-class CreateItemActivity < Activity
+class ItemActivity < Activity
   def email
     actor.email
   end

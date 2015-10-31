@@ -4,7 +4,9 @@
   <div id="news-feed">
     <h2 id="news-feed-header-text"><%= t('.news_feed_header') %></h2>
     <% if current_user %>
-      <%= render @activities %>
+      <ul>
+        <%= render @activities %>
+      </ul>
       <%= paginate @activities %>
     <% end %>
   </div>

@@ -3,11 +3,8 @@ class ApplicationController < ActionController::Base
 
   include Monban::ControllerHelpers
 
-  def notify(subject, target, type)
-    FollowerNotifier.new(current_user).notify_follower(
-      subject,
-      target,
-      type
-    )
+  def notify_followers(subject, target)
+    follower_notifier = FollowerNotifier.new(current_user)
+    follower_notifier.notify(subject, target)
   end
 end

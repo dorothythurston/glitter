@@ -3,12 +3,12 @@ class FollowerNotifier
     @user = user
   end
 
-  def notify_follower(subject, target, type)
+  def notify(subject, target)
     if subject.persisted?
       user.followers.each do |follower|
         follower.activities.create(
           subject: subject,
-          type: type,
+          type: type(subject),
           actor: user,
           target: target
         )
@@ -17,5 +17,10 @@ class FollowerNotifier
   end
 
   private
-    attr_reader :user
+
+  attr_reader :user
+
+  def type(subject)
+    "#{subject.class}Activity"
+  end
 end

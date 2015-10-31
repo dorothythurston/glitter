@@ -32,3 +32,9 @@ en:
   homes:
     show:
       welcome_message: Welcome
+  item_activities:
+    item_activity:
+      made_new: made a new
+  following_relationship_activities:
+    following_relationship_activity:
+      followed: followed
