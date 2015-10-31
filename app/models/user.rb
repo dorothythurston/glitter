@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   before_validation :set_api_token, on: :create
 
-  validates :email, presence: true, uniqueness: true
+  validates :email, email: true, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
   has_many :items

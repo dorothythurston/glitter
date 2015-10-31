@@ -1,10 +1,17 @@
 module Features
   module MonbanHelpers
     def sign_in_with(email, password)
-      visit sign_in_path
+      visit new_session_path
       fill_in 'session_email', with: email
       fill_in 'session_password', with: password
       click_button I18n.t('sessions.new.submit')
+    end
+
+    def sign_up_with(email, password)
+      visit new_user_path
+      fill_in 'user_email', with: email
+      fill_in 'user_password', with: password
+      click_button I18n.t('users.new.submit')
     end
 
     def signed_in_user

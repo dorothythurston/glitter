@@ -67,6 +67,8 @@ GEM
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
       railties (~> 4.0)
+    email_validator (1.4.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.4.0)
@@ -205,6 +207,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   dotenv-rails
+  email_validator
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails

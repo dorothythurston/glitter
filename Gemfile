@@ -13,6 +13,8 @@ gem 'monban-generators'
 gem 'neat'
 gem 'kaminari'
 gem "active_model_serializers", "~> 0.9.0"
+gem 'email_validator'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
