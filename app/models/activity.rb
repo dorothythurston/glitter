@@ -11,4 +11,8 @@ class Activity < ActiveRecord::Base
   def self.recent
     order(created_at: :desc)
   end
+
+  def actor_email
+    actor.email
+  end
 end
