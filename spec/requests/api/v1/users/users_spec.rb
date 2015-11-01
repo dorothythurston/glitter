@@ -19,3 +19,18 @@ describe "POST /v1/users" do
     }}.as_json)
   end
 end
+
+describe "GET /v1/users/:id" do
+  it "returns a user" do
+    user = create(:user)
+
+    json_get "/v1/users/#{user.id}", user: {
+      id: user.id
+    }, api_token: user.api_token
+
+    expect(json_response).to eq( {user: {
+      email: user.email,
+      followers: user.followers
+    }}.as_json)
+  end
+end
