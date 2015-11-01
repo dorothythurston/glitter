@@ -44,3 +44,24 @@ describe "DELETE /v1/items" do
     expect(Item.last).to eq(nil)
   end
 end
+
+
+describe "GET /v1/items/:id" do
+  it "returns a item" do
+    user = create(:user)
+    item = create(:item)
+
+    json_get "/v1/items/#{item.id}", item: {
+      id: item.id
+    }, api_token: user.api_token
+
+    expect(json_response).to eq( {item: {
+      text: item.text,
+      user_id: item.user.id,
+      glitter_count: item.glitterings.count,
+      user_email: item.user.email,
+      id: item.id,
+      created_at: item.created_at
+    }}.as_json)
+  end
+end
