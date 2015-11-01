@@ -27,6 +27,7 @@ Rails.application.routes.draw do
           post "glitter" => "item_glitterings#create"
         end
       end
+      resources :activities, only: [:index]
       resource :session
     end
   end
