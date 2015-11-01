@@ -49,7 +49,7 @@ end
 describe "GET /v1/items/:id" do
   it "returns a item" do
     user = create(:user)
-    item = create(:item)
+    item = create(:item, user: user)
 
     json_get "/v1/items/#{item.id}", item: {
       id: item.id
