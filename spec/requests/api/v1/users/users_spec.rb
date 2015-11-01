@@ -30,7 +30,7 @@ describe "GET /v1/users/:id" do
 
     expect(json_response).to eq( {user: {
       email: user.email,
-      followers: user.followers
+      followers: user.followers.count
     }}.as_json)
   end
 end
