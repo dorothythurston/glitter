@@ -48,3 +48,34 @@ describe "GET /v1/users" do
     expect(json_response.length).to eq(2)
   end
 end
+
+
+describe "POST /v1/users/id/follow" do
+  it "creates a following relationship" do
+    user = create(:user)
+    followed_user = create(:user)
+
+    json_post "/v1/users/#{followed_user.id}/follow", user: {
+      id: followed_user.id
+    }, api_token: user.api_token
+
+    expect(response.status).to eq 200
+    expect(FollowingRelationship.last.followed_user_id).to eq followed_user.id
+  end
+end
+
+
+describe "DELETE /v1/users/id/unfollow" do
+  it "deletes a following relationship" do
+    user = create(:user)
+    followed_user = create(:user)
+    user.follow(followed_user)
+
+    json_delete "/v1/users/#{followed_user.id}/unfollow", user: {
+      id: followed_user.id
+    }, api_token: user.api_token
+
+    expect(response.status).to eq 200
+    expect(FollowingRelationship.all).to eq []
+  end
+end
