@@ -23,6 +23,8 @@ end
 describe "GET /v1/users/:id" do
   it "returns a user" do
     user = create(:user)
+    following_user = create(:user)
+    following_user.follow(user)
 
     json_get "/v1/users/#{user.id}", user: {
       id: user.id
@@ -30,7 +32,7 @@ describe "GET /v1/users/:id" do
 
     expect(json_response).to eq( {user: {
       email: user.email,
-      followers: user.followers.count
+      followers: [following_user.id]
     }}.as_json)
   end
 end

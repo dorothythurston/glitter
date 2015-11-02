@@ -1,4 +1,4 @@
 json.user do
   json.email @user.email
-  json.followers @user.followers.count
+  json.followers @user.follower_ids
 end
