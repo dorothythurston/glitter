@@ -5,7 +5,10 @@ class Api::V1::ItemsController < Api::V1::BaseController
 
   def create
     item = current_user.items.create(item_params)
-    render json: { success: true }
+    if item.save
+      notify_followers(item, item)
+      render json: { success: true }
+    end
   end
 
   def destroy

@@ -18,16 +18,18 @@ describe "GET /v1/items" do
 end
 
 describe "POST /v1/items" do
-  it "creates an item" do
-     user = create(:user, id: 1)
+  it "creates an item and notifies user's followers" do
+     user = create(:user)
+     follower = create(:user)
+     follower.follow(user)
 
     json_post "/v1/items", item: {
       text: "example_text"
     }, api_token: user.api_token
 
-
     expect(response.status).to eq 200
     expect(Item.last.text).to eq ("example_text")
+    expect(Activity.last.actor_id).to eq(user.id)
   end
 end
 
