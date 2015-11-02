@@ -15,6 +15,10 @@ skip_before_action :authenticate_with_api_token, only: [:create]
     @user = User.find(params[:id])
   end
 
+  def index
+    @users = User.all
+  end
+
   private
 
   def user_params

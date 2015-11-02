@@ -34,3 +34,17 @@ describe "GET /v1/users/:id" do
     }}.as_json)
   end
 end
+
+
+describe "GET /v1/users" do
+  it 'returns a list of items' do
+    user = create(:user)
+    other_user = create(:user)
+
+    json_get '/v1/users',
+      api_token: user.api_token
+
+    expect(response.status).to eq 200
+    expect(json_response.length).to eq(2)
+  end
+end

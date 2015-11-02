@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   scope module: :api, defaults: { format: 'json' } do
     namespace :v1 do
-      resources :users, only: [:create, :show]
+      resources :users, only: [:create, :show, :index]
       resources :items, only: [:index, :create, :destroy, :show] do
         member do
           post "glitter" => "item_glitterings#create"
