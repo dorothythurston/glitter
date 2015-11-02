@@ -51,11 +51,13 @@ end
 describe "GET /v1/items/:id" do
   it "returns a item" do
     user = create(:user)
+    other_user = create(:user)
     item = create(:item, user: user)
+    other_user.glitter(item)
 
     json_get "/v1/items/#{item.id}", item: {
       id: item.id
-    }, api_token: user.api_token
+    }, api_token: other_user.api_token
 
     expect(json_response).to eq( {item: {
       text: item.text,
@@ -63,7 +65,8 @@ describe "GET /v1/items/:id" do
       glitter_count: item.glitterings.count,
       user_email: item.user.email,
       id: item.id,
-      created_at: item.created_at
+      created_at: item.created_at,
+      current_user_glittered: true
     }}.as_json)
   end
 end
