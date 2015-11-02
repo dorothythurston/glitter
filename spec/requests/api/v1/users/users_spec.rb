@@ -63,6 +63,9 @@ describe "POST /v1/users/id/follow" do
 
     expect(response.status).to eq 200
     expect(FollowingRelationship.last.followed_user_id).to eq followed_user.id
+    expect(json_response).to eq({
+      followers: 1 
+    }.as_json)
   end
 end
 
@@ -79,5 +82,8 @@ describe "DELETE /v1/users/id/unfollow" do
 
     expect(response.status).to eq 200
     expect(FollowingRelationship.all).to eq []
+    expect(json_response).to eq({
+      followers: 0
+    }.as_json)
   end
 end
