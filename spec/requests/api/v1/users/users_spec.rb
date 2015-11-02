@@ -21,8 +21,9 @@ describe "POST /v1/users" do
 end
 
 describe "GET /v1/users/:id" do
-  it "returns a user" do
+  it "returns a user, their followers, and their items" do
     user = create(:user)
+    item = create(:item, user_id: user.id)
     following_user = create(:user)
     following_user.follow(user)
 
@@ -32,14 +33,15 @@ describe "GET /v1/users/:id" do
 
     expect(json_response).to eq( {user: {
       email: user.email,
-      followers: [following_user.id]
+      followers: [following_user.id],
+      items: user.items.as_json
     }}.as_json)
   end
 end
 
 
 describe "GET /v1/users" do
-  it 'returns a list of items' do
+  it 'returns a list of users' do
     user = create(:user)
     other_user = create(:user)
 
