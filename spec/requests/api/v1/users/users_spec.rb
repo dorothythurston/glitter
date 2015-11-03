@@ -4,6 +4,7 @@ describe "POST /v1/users" do
   it "creates an user" do
 
     json_post "/v1/users", user: {
+      username: "validusername",
       email: "test@test.com",
       password: "test",
     }
@@ -13,6 +14,7 @@ describe "POST /v1/users" do
 
     expect(json_response).to eq({ current_user: {
       id: user.id,
+      username: user.username,
       email: user.email,
       api_token: user.api_token,
       device_token: user.device_token,
@@ -32,6 +34,7 @@ describe "GET /v1/users/:id" do
     }, api_token: user.api_token
 
     expect(json_response).to eq( {user: {
+      username: user.username,
       email: user.email,
       followers: [following_user.id],
       items: user.items.recent.as_json

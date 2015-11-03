@@ -16,6 +16,7 @@ RSpec.describe "POST /v1/session" do
 
       expect(json_response).to eq({ current_user: {
         id: user.id,
+        username: user.username,
         email: user.email,
         api_token: user.api_token,
         device_token: user.device_token,

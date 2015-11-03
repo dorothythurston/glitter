@@ -1,5 +1,5 @@
 class ItemActivity < Activity
-  def email
-    actor.email
+  def username
+    actor.username
   end
 end

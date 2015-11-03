@@ -22,6 +22,10 @@ skip_before_action :authenticate_with_api_token, only: [:create]
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:username, :email, :password)
+  end
+
+  def session_errors
+    serialize_errors [t(:invalid_login)]
   end
 end

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   before_validation :set_api_token, on: :create
 
+  validates :username, presence: true, uniqueness: true
+  validates_length_of :username, maximum: 15, message: "must be less than 15 characters"
   validates :email, email: true, presence: true, uniqueness: true
   validates :password_digest, presence: true
 

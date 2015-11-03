@@ -1,5 +1,5 @@
 json.array! @activities do |activity|
-  json.actor_email activity.actor_email
+  json.actor_username activity.actor_username
   json.user_id activity.user_id
   json.type activity.type
   json.subject_id activity.subject_id

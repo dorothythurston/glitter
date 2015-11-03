@@ -7,8 +7,9 @@ module Features
       click_button I18n.t('sessions.new.submit')
     end
 
-    def sign_up_with(email, password)
+    def sign_up_with(username, email, password)
       visit new_user_path
+      fill_in 'user_username', with: username
       fill_in 'user_email', with: email
       fill_in 'user_password', with: password
       click_button I18n.t('users.new.submit')

@@ -12,7 +12,7 @@ class Activity < ActiveRecord::Base
     order(created_at: :desc)
   end
 
-  def actor_email
-    actor.email
+  def actor_username
+    actor.username
   end
 end

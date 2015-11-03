@@ -63,7 +63,7 @@ describe "GET /v1/items/:id" do
       text: item.text,
       user_id: item.user.id,
       glitter_count: item.glitterings.count,
-      user_email: item.user.email,
+      user_username: item.user.username,
       id: item.id,
       created_at: item.created_at,
       current_user_glittered: true

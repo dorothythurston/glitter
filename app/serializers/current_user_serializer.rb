@@ -1,3 +1,3 @@
  class CurrentUserSerializer < ActiveModel::Serializer
-   attributes :id, :email, :api_token, :device_token
+   attributes :id, :username, :email, :api_token, :device_token
  end
