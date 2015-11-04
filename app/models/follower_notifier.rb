@@ -13,7 +13,17 @@ class FollowerNotifier
           target: target
         )
       end
+      add_own_activity(subject, target)
     end
+  end
+
+  def add_own_activity(subject, target)
+    user.activities.create(
+      subject: subject,
+      type: type(subject),
+      actor: user,
+      target: target
+    )
   end
 
   private

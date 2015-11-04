@@ -1,4 +1,8 @@
 <li>
-  <%= link_to item_activity.username, item_activity.actor %>
+  <%  if item_activity.actor == current_user %>
+      <%= t('.you') %>
+  <% else %>
+    <%= link_to item_activity.username, item_activity.actor %>
+  <% end %>
   <%= t('.made_new') %> <%= link_to t('.post'), item_activity.subject %>
 </li>

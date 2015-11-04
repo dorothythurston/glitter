@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 describe "User can view activity on dashboard" do
+  scenario "caused own activity" do
+    user = create(:user)
+    visit root_path(as: user)
+    create_item(example_text)
+
+    expect(page).to have_content("#{I18n.t('item_activites.item_activity.you')}" "#{I18n.t('item_activities.item_activity.made_new')}")
+  end
+
   scenario "followed user successfully creates item" do
     user = create(:user)
     follower = create(:user)

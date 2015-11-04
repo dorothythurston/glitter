@@ -39,6 +39,7 @@ en:
       example_glitter: "glitter: 5"
   item_activities:
     item_activity:
+      you: you
       made_new: made a new
       post: post
   following_relationship_activities:
