@@ -58,19 +58,25 @@ end
 
 
 describe "POST /v1/users/id/follow" do
-  it "creates a following relationship" do
+  it "creates a following relationship and adds followed users recent activities to current user's" do
     user = create(:user)
     followed_user = create(:user)
+
+    json_post "/v1/items", item: {
+      text: "example_text"
+    }, api_token: followed_user.api_token
 
     json_post "/v1/users/#{followed_user.id}/follow", user: {
       id: followed_user.id
     }, api_token: user.api_token
 
     expect(response.status).to eq 200
+    activity = user.activities.where(actor_id: followed_user.id)
     expect(FollowingRelationship.last.followed_user_id).to eq followed_user.id
     expect(json_response).to eq({
-      followers: 1 
+      followers: 1
     }.as_json)
+    expect(activity).not_to eq([])
   end
 end
 
