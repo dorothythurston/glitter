@@ -12,6 +12,10 @@ class Activity < ActiveRecord::Base
     order(created_at: :desc)
   end
 
+  def self.recent_by_user(user)
+    where(actor_id: user.id).first(3)
+  end
+
   def actor_username
     actor.username
   end

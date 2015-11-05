@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
 
   def unfollow(user)
     followed_users.destroy user
+    remove_unfollowed_user_related_activities(user)
   end
 
   def glitter(target)
@@ -44,7 +45,29 @@ class User < ActiveRecord::Base
     glitterings.exists?(glitterable: target)
   end
 
+  def add_recent_activities(followed_user)
+    recent_activities = Activity.recent_by_user(followed_user)
+    recent_activities.each do |activity|
+      self.activities.create(
+        subject: activity.subject,
+        type: type(activity.subject),
+        actor: activity.user,
+        target: activity.target,
+        created_at: activity.created_at
+      )
+    end
+  end
+
+  def remove_unfollowed_user_related_activities(unfollowed_user)
+    user_related_activities = self.activities.where(actor_id: unfollowed_user.id)
+    activities.destroy user_related_activities
+  end
+
   private
+
+  def type(subject)
+    "#{subject.class}Activity"
+  end
 
   def set_api_token
     begin

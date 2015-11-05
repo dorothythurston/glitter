@@ -1,4 +1,11 @@
 <li>
-  <%= link_to following_relationship_activity.follower_username, following_relationship_activity.actor %> <%= t('.followed') %>
+  <%  if following_relationship_activity.actor == current_user %>
+      <%= t('.you') %>
+  <% else %>
+    <%= link_to following_relationship_activity.follower_username, following_relationship_activity.actor %>
+  <% end %>
+  <%= t('.followed') %>
   <%= link_to following_relationship_activity.followed_user_username, following_relationship_activity.target %>
+  <br>
+  <%= following_relationship_activity.created_at.strftime("%b %e %l:%M %p") %>
 </li>

@@ -4,6 +4,7 @@ class FollowingRelationshipsController < ApplicationController
     following_relationship =  current_user.follow followed_user
     if following_relationship.save
       notify_followers(following_relationship, followed_user)
+      current_user.add_recent_activities(followed_user)
     end
     redirect_to followed_user
   end

@@ -1,4 +1,10 @@
 <li>
-  <%= link_to glittering_activity.username, glittering_activity.actor %>
+  <%  if glittering_activity.actor == current_user %>
+      <%= t('.you') %>
+  <% else %>
+    <%= link_to glittering_activity.username, glittering_activity.actor %>
+  <% end %>
   <%= t('.glittered') %> <%= link_to t('.post'), glittering_activity.target %>
+  <br>
+  <%= glittering_activity.created_at.strftime("%b %e %l:%M%P") %>
 </li>

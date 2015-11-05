@@ -5,4 +5,6 @@
     <%= link_to item_activity.username, item_activity.actor %>
   <% end %>
   <%= t('.made_new') %> <%= link_to t('.post'), item_activity.subject %>
+  <br>
+  <%= item_activity.created_at.strftime("%b %e %l:%M%P") %>
 </li>

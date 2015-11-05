@@ -45,9 +45,11 @@ en:
   following_relationship_activities:
     following_relationship_activity:
       followed: followed
+      you: you
   glittering_activities:
     glittering_activity:
       post: post
       glittered: glittered a
+      you: you
   flashes:
     failure_after_create: Bad email or password.
